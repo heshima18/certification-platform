@@ -1,0 +1,573 @@
+
+<!DOCTYPE html>
+<html lang="en" class="light-style layout-navbar-fixed layout-menu-fixed" data-theme="theme-default" data-assets-path="../assets/">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+    <title>Demo | Add A Facility</title>
+    <link rel="icon" type="image/x-icon" href="../assets/svg/logo.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&amp;display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../assets/vendor/fonts/boxicons.css" />
+    <link rel="stylesheet" href="../assets/vendor/fonts/fontawesome.css" />
+    <link rel="stylesheet" href="../styles/styling.css" />
+
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="../assets/vendor/css/core.css" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="../assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="../assets/css/demo.css" />
+
+    <!-- Vendors CSS -->
+    <link rel="stylesheet" href="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+    <link rel="stylesheet" href="../assets/vendor/libs/typeahead-js/typeahead.css" />
+
+    <link rel="stylesheet" href="../assets/vendor/libs/datatables-bs5/datatables.bootstrap5.css">
+    <link rel="stylesheet" href="../assets/vendor/libs/datatables-responsive-bs5/responsive.bootstrap5.css">
+    <link rel="stylesheet" href="../assets/vendor/libs/datatables-buttons-bs5/buttons.bootstrap5.css">
+    <link rel="stylesheet" href="../assets/vendor/libs/datatables-checkboxes-jquery/datatables.checkboxes.css">
+
+    <link rel="stylesheet" href="../assets/vendor/libs/select2/select2.css" />
+    <link rel="stylesheet" href="../assets/vendor/libs/formvalidation/dist/css/formValidation.min.css" />
+    <link rel="stylesheet" href="../assets/vendor/libs/apex-charts/apex-charts.css" />
+    <link rel="stylesheet" href="../assets/vendor/libs/fullcalendar/fullcalendar.css" />
+    <link rel="stylesheet" href="../assets/vendor/libs/flatpickr/flatpickr.css" />
+    <link rel="stylesheet" href="../assets/vendor/libs/quill/editor.css" />
+    <link rel="stylesheet" href="../assets/vendor/libs/animate-css/animate.css" />
+    <link rel="stylesheet" href="../assets/vendor/libs/sweetalert2/sweetalert2.css" />
+    <link rel="stylesheet" href="../assets/vendor/libs/swiper/swiper.css" />
+    <link rel="stylesheet" href="../assets/vendor/libs/spinkit/spinkit.css" />
+    <link rel="stylesheet" href="../assets/vendor/libs/toastr/toastr.css" />
+    <link rel="stylesheet" href="../assets/vendor/libs/tagify/tagify.css" />
+
+    <!-- App Configurations -->
+    <script src="../assets/vendor/js/helpers.js"></script>
+    <script src="../assets/js/config.js"></script>
+</head>
+
+<body>
+<div class="layout-wrapper layout-content-navbar">
+    <div class="layout-container">
+        <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
+            <div class="app-brand demo">
+                <a href="/" class="app-brand-link">
+                    <span class="app-brand-logo demo">
+                        <img src="../assets/svg/logo.svg" alt="Demo" srcset="">
+                    </span>
+                    <span class="app-brand-text demo menu-text fw-bolder ms-2">Demo</span>
+                </a>
+                <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto">
+                    <i class="bx bx-chevron-left bx-sm align-middle"></i>
+                </a>
+            </div>
+            <div class="menu-inner-shadow"></div>
+            <ul class="menu-inner py-1">
+                <li class="menu-item">
+                    <a href="/" class="menu-link">
+                        <i class="menu-icon tf-icons bx bx-home-circle"></i>
+                        <div>Dashboard</div>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="../myAccount/" class="menu-link">
+                        <i class='menu-icon tf-icons bx bx-check-shield'></i>
+                        <div>My account</div>
+                    </a>
+                </li>
+                <li class="menu-header small text-uppercase">
+                    <span class="menu-header-text">Apps &amp; Facs</span>
+                </li>
+                <li class="menu-item">
+                    <a href="javascript:void(0);" class="menu-link menu-toggle">
+                        <i class="menu-icon tf-icons bx bx-dock-top"></i>
+                        <div>Applications</div>
+                    </a>
+                    <ul class="menu-sub">
+                        <li class="menu-item ">
+                            <a href="../addApplication/" class="menu-link capitalize">
+                                <div>add a new application</div>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="../myApplications/" class="menu-link capitalize">
+                                <div>all applications</div>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="../pendingApplications/" class="menu-link capitalize">
+                                <div>pending applications</div>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="../approvedApplications/" class="menu-link capitalize">
+                                <div>approved applications</div>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="../declinedApplications/" class="menu-link capitalize">
+                                <div>declined applications</div>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="menu-item open">
+                    <a href="javascript:void(0);" class="menu-link menu-toggle">
+                        <i class="menu-icon tf-icons bx bx-dock-top"></i>
+                        <div>Facilities</div>
+                    </a>
+                    <ul class="menu-sub">
+                        <li class="menu-item active">
+                            <a href="../addFacility/" class="menu-link capitalize">
+                                <div>add a new facility</div>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="../myFacilities/" class="menu-link capitalize">
+                                <div>my facilities</div>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="menu-header small text-uppercase"><span class="menu-header-text">Certs &amp; Feedback</span></li>
+                <li class="menu-item">
+                    <a href="javascript:void(0);" class="menu-link menu-toggle">
+                        <i class="menu-icon tf-icons bx bx-collection"></i>
+                        <div>My certifications</div>
+                    </a>
+                    <ul class="menu-sub">
+                        <li class="menu-item">
+                            <a href="../newCertifications/" class="menu-link">
+                                <div>New Certifications</div>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="../myCertifications/" class="menu-link">
+                                <div>All Certifications</div>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="menu-item">
+                    <a href="javascript:void(0);" class="menu-link menu-toggle">
+                        <i class="menu-icon tf-icons bx bx-collection"></i>
+                        <div>Feedbacks</div>
+                    </a>
+                    <ul class="menu-sub">
+                        <li class="menu-item">
+                            <a href="../addFeedback/" class="menu-link">
+                                <div>New Feedback</div>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="../myFeedbacks/" class="menu-link">
+                                <div>My Feedbacks</div>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </aside>
+        <div class="layout-page">
+            <nav class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme" id="layout-navbar">
+                <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0   d-xl-none ">
+                    <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)">
+                        <i class="bx bx-menu bx-sm"></i>
+                    </a>
+                </div>
+                <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
+                    <div class="navbar-nav align-items-center">
+                        <div class="nav-item navbar-search-wrapper mb-0">
+                            <a class="nav-item nav-link search-toggler px-0" href="javascript:void(0);">
+                                <i class="bx bx-search bx-sm"></i>
+                                <span class="d-none d-md-inline-block text-muted">Search (Ctrl+/)</span>
+                            </a>
+                        </div>
+                    </div>
+                    <ul class="navbar-nav flex-row align-items-center ms-auto">
+                        <li class="nav-item me-2 me-xl-0">
+                            <a class="nav-link style-switcher-toggle hide-arrow" href="javascript:void(0);">
+                                <i class='bx bx-sm'></i>
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown-notifications navbar-dropdown dropdown me-3 me-xl-1">
+                            <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+                                <i class="bx bx-bell bx-sm"></i>
+                                <span class="badge bg-danger rounded-pill badge-notifications">5</span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end py-0">
+                                <li class="dropdown-menu-header border-bottom">
+                                    <div class="dropdown-header d-flex align-items-center py-3">
+                                        <h5 class="text-body mb-0 me-auto">Notification</h5>
+                                        <a href="javascript:void(0)" class="dropdown-notifications-all text-body" data-bs-toggle="tooltip" data-bs-placement="top" title="Mark all as read"><i class="bx fs-4 bx-envelope-open"></i></a>
+                                    </div>
+                                </li>
+                                <li class="dropdown-notifications-list scrollable-container">
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item list-group-item-action dropdown-notifications-item">
+                                            <div class="d-flex">
+                                                <div class="flex-shrink-0 me-3">
+                                                    <div class="avatar">
+                                                        <img src="../assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle">
+                                                    </div>
+                                                </div>
+                                                <div class="flex-grow-1">
+                                                    <h6 class="mb-1">Congratulation Lettie 🎉</h6>
+                                                    <p class="mb-0">Won the monthly best seller gold badge</p>
+                                                    <small class="text-muted">1h ago</small>
+                                                </div>
+                                                <div class="flex-shrink-0 dropdown-notifications-actions">
+                                                    <a href="javascript:void(0)" class="dropdown-notifications-read"><span class="badge badge-dot"></span></a>
+                                                    <a href="javascript:void(0)" class="dropdown-notifications-archive"><span class="bx bx-x"></span></a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item list-group-item-action dropdown-notifications-item">
+                                            <div class="d-flex">
+                                                <div class="flex-shrink-0 me-3">
+                                                    <div class="avatar">
+                                                        <span class="avatar-initial rounded-circle bg-label-danger">CF</span>
+                                                    </div>
+                                                </div>
+                                                <div class="flex-grow-1">
+                                                    <h6 class="mb-1">Charles Franklin</h6>
+                                                    <p class="mb-0">Accepted your connection</p>
+                                                    <small class="text-muted">12hr ago</small>
+                                                </div>
+                                                <div class="flex-shrink-0 dropdown-notifications-actions">
+                                                    <a href="javascript:void(0)" class="dropdown-notifications-read"><span class="badge badge-dot"></span></a>
+                                                    <a href="javascript:void(0)" class="dropdown-notifications-archive"><span class="bx bx-x"></span></a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item list-group-item-action dropdown-notifications-item marked-as-read">
+                                            <div class="d-flex">
+                                                <div class="flex-shrink-0 me-3">
+                                                    <div class="avatar">
+                                                        <img src="../assets/img/avatars/2.png" alt class="w-px-40 h-auto rounded-circle">
+                                                    </div>
+                                                </div>
+                                                <div class="flex-grow-1">
+                                                    <h6 class="mb-1">New Message ✉️</h6>
+                                                    <p class="mb-0">You have new message from Natalie</p>
+                                                    <small class="text-muted">1h ago</small>
+                                                </div>
+                                                <div class="flex-shrink-0 dropdown-notifications-actions">
+                                                    <a href="javascript:void(0)" class="dropdown-notifications-read"><span class="badge badge-dot"></span></a>
+                                                    <a href="javascript:void(0)" class="dropdown-notifications-archive"><span class="bx bx-x"></span></a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item list-group-item-action dropdown-notifications-item">
+                                            <div class="d-flex">
+                                                <div class="flex-shrink-0 me-3">
+                                                    <div class="avatar">
+                                                        <span class="avatar-initial rounded-circle bg-label-success"><i class="bx bx-cart"></i></span>
+                                                    </div>
+                                                </div>
+                                                <div class="flex-grow-1">
+                                                    <h6 class="mb-1">Whoo! You have new order 🛒 </h6>
+                                                    <p class="mb-0">ACME Inc. made new order $1,154</p>
+                                                    <small class="text-muted">1 day ago</small>
+                                                </div>
+                                                <div class="flex-shrink-0 dropdown-notifications-actions">
+                                                    <a href="javascript:void(0)" class="dropdown-notifications-read"><span class="badge badge-dot"></span></a>
+                                                    <a href="javascript:void(0)" class="dropdown-notifications-archive"><span class="bx bx-x"></span></a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item list-group-item-action dropdown-notifications-item marked-as-read">
+                                            <div class="d-flex">
+                                                <div class="flex-shrink-0 me-3">
+                                                    <div class="avatar">
+                                                        <img src="../assets/img/avatars/9.png" alt class="w-px-40 h-auto rounded-circle">
+                                                    </div>
+                                                </div>
+                                                <div class="flex-grow-1">
+                                                    <h6 class="mb-1">Application has been approved 🚀 </h6>
+                                                    <p class="mb-0">Your ABC project application has been approved.
+                                                    </p>
+                                                    <small class="text-muted">2 days ago</small>
+                                                </div>
+                                                <div class="flex-shrink-0 dropdown-notifications-actions">
+                                                    <a href="javascript:void(0)" class="dropdown-notifications-read"><span class="badge badge-dot"></span></a>
+                                                    <a href="javascript:void(0)" class="dropdown-notifications-archive"><span class="bx bx-x"></span></a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item list-group-item-action dropdown-notifications-item marked-as-read">
+                                            <div class="d-flex">
+                                                <div class="flex-shrink-0 me-3">
+                                                    <div class="avatar">
+                                                        <span class="avatar-initial rounded-circle bg-label-success"><i class="bx bx-pie-chart-alt"></i></span>
+                                                    </div>
+                                                </div>
+                                                <div class="flex-grow-1">
+                                                    <h6 class="mb-1">Monthly report is generated</h6>
+                                                    <p class="mb-0">July monthly financial report is generated </p>
+                                                    <small class="text-muted">3 days ago</small>
+                                                </div>
+                                                <div class="flex-shrink-0 dropdown-notifications-actions">
+                                                    <a href="javascript:void(0)" class="dropdown-notifications-read"><span class="badge badge-dot"></span></a>
+                                                    <a href="javascript:void(0)" class="dropdown-notifications-archive"><span class="bx bx-x"></span></a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item list-group-item-action dropdown-notifications-item marked-as-read">
+                                            <div class="d-flex">
+                                                <div class="flex-shrink-0 me-3">
+                                                    <div class="avatar">
+                                                        <img src="../assets/img/avatars/5.png" alt class="w-px-40 h-auto rounded-circle">
+                                                    </div>
+                                                </div>
+                                                <div class="flex-grow-1">
+                                                    <h6 class="mb-1">Send connection request</h6>
+                                                    <p class="mb-0">Peter sent you connection request</p>
+                                                    <small class="text-muted">4 days ago</small>
+                                                </div>
+                                                <div class="flex-shrink-0 dropdown-notifications-actions">
+                                                    <a href="javascript:void(0)" class="dropdown-notifications-read"><span class="badge badge-dot"></span></a>
+                                                    <a href="javascript:void(0)" class="dropdown-notifications-archive"><span class="bx bx-x"></span></a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item list-group-item-action dropdown-notifications-item">
+                                            <div class="d-flex">
+                                                <div class="flex-shrink-0 me-3">
+                                                    <div class="avatar">
+                                                        <img src="../assets/img/avatars/6.png" alt class="w-px-40 h-auto rounded-circle">
+                                                    </div>
+                                                </div>
+                                                <div class="flex-grow-1">
+                                                    <h6 class="mb-1">New message from Jane</h6>
+                                                    <p class="mb-0">Your have new message from Jane</p>
+                                                    <small class="text-muted">5 days ago</small>
+                                                </div>
+                                                <div class="flex-shrink-0 dropdown-notifications-actions">
+                                                    <a href="javascript:void(0)" class="dropdown-notifications-read"><span class="badge badge-dot"></span></a>
+                                                    <a href="javascript:void(0)" class="dropdown-notifications-archive"><span class="bx bx-x"></span></a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item list-group-item-action dropdown-notifications-item marked-as-read">
+                                            <div class="d-flex">
+                                                <div class="flex-shrink-0 me-3">
+                                                    <div class="avatar">
+                                                        <span class="avatar-initial rounded-circle bg-label-warning"><i class="bx bx-error"></i></span>
+                                                    </div>
+                                                </div>
+                                                <div class="flex-grow-1">
+                                                    <h6 class="mb-1">CPU is running high</h6>
+                                                    <p class="mb-0">CPU Utilization Percent is currently at 88.63%,
+                                                    </p>
+                                                    <small class="text-muted">5 days ago</small>
+                                                </div>
+                                                <div class="flex-shrink-0 dropdown-notifications-actions">
+                                                    <a href="javascript:void(0)" class="dropdown-notifications-read"><span class="badge badge-dot"></span></a>
+                                                    <a href="javascript:void(0)" class="dropdown-notifications-archive"><span class="bx bx-x"></span></a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-menu-footer border-top">
+                                    <a href="javascript:void(0);" class="dropdown-item d-flex justify-content-center p-3">
+                                        View all notifications
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item navbar-dropdown dropdown-user dropdown">
+                            <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
+                                <div class="avatar avatar-online">
+                                    <img src="../assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle">
+                                </div>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li>
+                                    <a class="dropdown-item" href="../myAccount/">
+                                        <div class="d-flex">
+                                            <div class="flex-shrink-0 me-3">
+                                                <div class="avatar avatar-online">
+                                                    <img src="../assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle">
+                                                </div>
+                                            </div>
+                                            <div class="flex-grow-1">
+                                                <span class="fw-semibold d-block">John Doe</span>
+                                                <small class="text-muted">Admin</small>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <div class="dropdown-divider"></div>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="../myAccount/">
+                                        <i class="bx bx-user me-2"></i>
+                                        <span class="align-middle">My Profile</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <div class="dropdown-divider"></div>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="../login/" target="_blank">
+                                        <i class="bx bx-power-off me-2"></i>
+                                        <span class="align-middle">Log Out</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="navbar-search-wrapper search-input-wrapper  d-none">
+                    <input type="text" name="search" class="form-control search-input container-xxl border-0" placeholder="Search..." aria-label="Search...">
+                    <i class="bx bx-x bx-sm search-toggler cursor-pointer"></i>
+                </div>
+            </nav>
+            <div class="content-wrapper">
+                <div class="container-xxl flex-grow-1 container-p-y">
+
+<!-- Page CSS -->
+<link rel="stylesheet" href="../assets/vendor/css/pages/page-user-view.css" />
+
+<h4 class="fw-bold py-3 mb-4">
+    <span class="text-muted fw-light">User /</span> Add A Facility
+</h4>
+<div class="row">
+    <!-- User Content -->
+    <div class="col-xl-8 col-lg-7 col-md-12 order-0 order-md-1">
+        <div class="nav-align-top m-4">
+            <div class="tab-content">
+                <form id="addNewAddressForm" class="row g-3 fv-plugins-bootstrap5 fv-plugins-framework" onsubmit="return false" novalidate="false">
+                    <div class="col-12 col-md-6 fv-plugins-icon-container">
+                        <label class="form-label" for="facilityName">Facility Name</label>
+                        <input type="text" id="facilityName" name="facilityName" class="form-control" placeholder="Demo name">
+                    <div class="fv-plugins-message-container invalid-feedback"></div></div>
+                    <div class="col-12 col-md-6 fv-plugins-icon-container">
+                        <label class="form-label" for="tin-number">TIN number</label>
+                        <input type="text" id="tin-number" name="tin-number" class="form-control" placeholder="000 000">
+                    <div class="fv-plugins-message-container invalid-feedback"></div></div>
+                    <div class="col-12">
+                        <label class="form-label" for="province">Facility Type</label>
+                        <div class="position-relative"><div class="position-relative"><select id="province" name="province" class="select2 form-select select2-hidden-accessible" data-allow-clear="true" tabindex="-1" aria-hidden="true" data-select2-id="province">
+                            <option value="" data-select2-id="33">Select</option>
+                            <option value="North">Clinic</option>
+                            <option value="South">Hospital</option>
+                            <option value="East">Pharmacy</option>
+                        </select>
+                        <span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="32" style="width: auto;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-province-container"><span class="select2-selection__rendered" id="select2-province-container" role="textbox" aria-readonly="true"><span class="select2-selection__placeholder">Select value</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span></div></div>
+                    </div>
+                    <div class="col-12">
+                        <label class="form-label" for="province">Province</label>
+                        <div class="position-relative"><div class="position-relative"><select id="province" name="province" class="select2 form-select select2-hidden-accessible" data-allow-clear="true" tabindex="-1" aria-hidden="true" data-select2-id="province">
+                            <option value="" data-select2-id="33">Select</option>
+                            <option value="North">North</option>
+                            <option value="South">South</option>
+                            <option value="East">East</option>
+                            <option value="West">West</option>
+                            <option value="kigali">Kigali</option>
+                        </select>
+                        <span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="32" style="width: auto;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-province-container"><span class="select2-selection__rendered" id="select2-province-container" role="textbox" aria-readonly="true"><span class="select2-selection__placeholder">Select value</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span></div></div>
+                    </div>
+                    <div class="col-12">
+                        <label class="form-label" for="District">District</label>
+                        <div class="position-relative"><div class="position-relative"><select id="district" name="district" class="select2 form-select select2-hidden-accessible" data-allow-clear="true" tabindex="-1" aria-hidden="true" data-select2-id="district">
+                            <option value="" data-select2-id="33">Select</option>
+                            <option value="nyarugenge">nyarugenge</option>
+                            <option value="gasabo">gasabo</option>
+                            <option value="kicukiro">kicukiro</option>
+                            <option value="rubavu">rubavu</option>
+                            <option value="karongi">karongi</option>
+                            <option value="musanze">musanze</option>
+                            <option value="huye">huye</option>
+                        </select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="32" style="width: auto;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-province-container"><span class="select2-selection__rendered" id="select2-province-container" role="textbox" aria-readonly="true"><span class="select2-selection__placeholder">Select value</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span></div></div>
+                    </div>
+                    <div class="col-12">
+                        <label class="form-label" for="Sector">Sector</label>
+                        <div class="position-relative"><div class="position-relative"><select id="sector" name="sector" class="select2 form-select select2-hidden-accessible" data-allow-clear="true" tabindex="-1" aria-hidden="true" data-select2-id="sector">
+                            <option value="" data-select2-id="33">Select</option>
+                            <option value="nyarugenge">gisenyi</option>
+                            <option value="gasabo">muhoza</option>
+                            <option value="kicukiro">butare</option>
+                            <option value="rubavu">gatenga</option>
+                            <option value="karongi">nyabugogo</option>
+                        </select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="32" style="width: auto;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-province-container"><span class="select2-selection__rendered" id="select2-province-container" role="textbox" aria-readonly="true"><span class="select2-selection__placeholder">Select value</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span></div></div>
+                    </div>
+                    <div class="col-12 text-center">
+                        <button type="submit" class="btn btn-primary me-sm-3 me-1">Submit</button>
+                        <button type="reset" class="btn btn-label-secondary" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
+                    </div>
+                <input type="hidden"></form>
+            </div>
+        </div>
+    </div>
+    <!--/ User Content -->
+</div>
+</div>
+<footer class="content-footer footer bg-footer-theme">
+    <div class="container-xxl d-flex flex-wrap justify-content-between py-2 flex-md-row flex-column">
+        <div class="mb-2 mb-md-0">
+            &copy;
+            <script>
+                document.write(new Date().getFullYear())
+            </script>
+            <strong>Demo</strong>
+        </div>
+        <div>
+            Powered by <a href="https://prtlfo.vercel.app/" target="_blank" class="footer-link fw-bolder">#__himself</a>
+        </div>
+    </div>
+</footer>
+<div class="content-backdrop fade"></div>
+</div>
+</div>
+</div>
+
+<div class="layout-overlay layout-menu-toggle"></div>
+<div class="drag-target"></div>
+</div>
+
+<!-- Core JS -->
+<!-- build:js assets/vendor/js/core.js -->
+<script src="../assets/vendor/libs/jquery/jquery.js"></script>
+<script src="../assets/vendor/libs/popper/popper.js"></script>
+<script src="../assets/vendor/js/bootstrap.js"></script>
+<script src="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+
+<script src="../assets/vendor/libs/hammer/hammer.js"></script>
+<script src="../assets/vendor/libs/typeahead-js/typeahead.js"></script>
+
+<script src="../assets/vendor/js/menu.js"></script>
+<!-- endbuild -->
+
+<!-- Vendors JS -->
+<script src="../assets/vendor/libs/fullcalendar/fullcalendar.js"></script>
+
+<script src="../assets/vendor/libs/formvalidation/dist/js/FormValidation.min.js"></script>
+<script src="../assets/vendor/libs/formvalidation/dist/js/plugins/Bootstrap5.min.js"></script>
+<script src="../assets/vendor/libs/formvalidation/dist/js/plugins/AutoFocus.min.js"></script>
+
+<script src="../assets/vendor/libs/select2/select2.js"></script>
+<script src="../assets/vendor/libs/flatpickr/flatpickr.js"></script>
+<script src="../assets/vendor/libs/moment/moment.js"></script>
+<script src="../assets/vendor/libs/apex-charts/apexcharts.js"></script>
+<script src="../assets/vendor/libs/datatables-bs5/datatables-bootstrap5.js"></script>
+
+<script src="../assets/vendor/libs/cleavejs/cleave.js"></script>
+<script src="../assets/vendor/libs/cleavejs/cleave-phone.js"></script>
+<script src="../assets/vendor/libs/sweetalert2/sweetalert2.js"></script>
+<script src="../assets/vendor/libs/masonry/masonry.js"></script>
+<script src="../assets/vendor/libs/swiper/swiper.js"></script>
+<script src="../assets/vendor/js/dropdown-hover.js"></script>
+<script src="../assets/vendor/libs/toastr/toastr.js"></script>
+<script src="../assets/vendor/libs/tagify/tagify.js"></script>
+
+<!-- Main JS -->
+<script src="../assets/js/main.js"></script>
+<!-- Page JS -->
+<script src="../assets/js/modal-edit-user.js"></script>
+<script src="../assets/js/app-user-view.js"></script>
+<script src="../assets/js/app-user-view-account.js"></script>
