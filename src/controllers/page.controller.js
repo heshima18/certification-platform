@@ -18,7 +18,7 @@ let page = (req,res)=>{
             file = path.join(__dirname,'..','pages', 'dashboard.html') 
             break;
         case 'login/':
-            file = path.join(__dirname,'..','pages','demo','client', 'auth-login.html') 
+            file = path.join(__dirname,'..','pages','demo', 'auth-login.html') 
             break;
         case 'myApplications/':
             file = path.join(__dirname,'..','pages','demo','client', 'my-applications.html') 
@@ -36,7 +36,7 @@ let page = (req,res)=>{
             file = path.join(__dirname,'..','pages','demo','client', 'add-facility.html') 
             break;
         case 'auth/':
-            file = path.join(__dirname,'..','pages','demo','client', 'auth-two-steps.html') 
+            file = path.join(__dirname,'..','pages','demo', 'auth-two-steps.html') 
             break;
         case 'addFeedback/':
             file = path.join(__dirname,'..','pages','demo','client', 'add-feedback.html') 
@@ -48,13 +48,16 @@ let page = (req,res)=>{
             file = path.join(__dirname,'..','pages','demo','client', 'my-feedbacks.html') 
             break;
         case 'signup/':
-            file = path.join(__dirname,'..','pages','demo','client', 'auth-register.html') 
+            file = path.join(__dirname,'..','pages','demo', 'auth-register.html') 
             break;
         case 'addApplication/':
             file = path.join(__dirname,'..','pages','demo','client', 'add-application.html') 
             break;
         case 'forgotpassword/':
-            file = path.join(__dirname,'..','pages','demo','client', 'auth-forgot-password.html') 
+            file = path.join(__dirname,'..','pages','demo', 'auth-forgot-password.html') 
+            break;
+        case 'resetPassword/':
+            file = path.join(__dirname,'..','pages','demo', 'auth-reset-password.html') 
             break;
         default:
                 file = 'N/A'

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en" class="light-style layout-navbar-fixed layout-menu-fixed" data-theme="theme-default" data-assets-path="../assets/">
 
@@ -45,49 +46,60 @@
     <script src="../assets/js/config.js"></script>
 </head>
 
-<body><!-- Page -->
+<body>
+<!-- Page -->
 <link rel="stylesheet" href="../assets/vendor/css/pages/page-auth.css">
-<div class="container-xxl">
-    <div class="authentication-wrapper authentication-basic container-p-y">
-        <div class="authentication-inner py-4">
-            <div class="card">
-                <div class="card-body">
-                    <div class="app-brand justify-content-center">
-                        <a href="index.php" class="app-brand-link gap-2">
-                            <span class="app-brand-logo demo">
-                                <img src="../assets/svg/logo.svg" alt="Demo">
-                            </span>
-                            <span class="app-brand-text demo text-body fw-bolder">Demo</span>
-                        </a>
-                    </div>
-                    <h4 class="mb-2">Forgot Password? 🔒</h4>
-                    <p class="mb-4">Enter your email and we'll send you instructions to reset your password</p>
-                    <form id="formAuthentication" class="mb-3 fv-plugins-bootstrap5 fv-plugins-framework" action="auth-reset-password-basic.php" method="POST" novalidate="novalidate">
-                        <div class="mb-3 fv-plugins-icon-container">
-                            <label for="email" class="form-label">Email</label>
-                            <input type="text" class="form-control" id="email" name="email" placeholder="Enter your email" autofocus="">
-                        <div class="fv-plugins-message-container invalid-feedback"></div></div>
-                        <button class="btn btn-primary d-grid w-100">Send Reset Link</button>
-                    <input type="hidden"></form>
-                    <div class="text-center">
-                        <a href="../login/" class="d-flex align-items-center justify-content-center">
-                            <i class="bx bx-chevron-left scaleX-n1-rtl bx-sm"></i>
-                            Back to login
-                        </a>
-                    </div>
+<div class="authentication-wrapper authentication-basic px-4">
+    <div class="authentication-inner">
+        <div class="card">
+            <div class="card-body">
+                <div class="app-brand justify-content-center">
+                    <a href="index.php" class="app-brand-link gap-2">
+                        <span class="app-brand-logo demo">
+                            <img src="../assets/svg/logo.svg" alt="Demo">
+                        </span>
+                        <span class="app-brand-text demo text-body fw-bolder">Demo</span>
+                    </a>
                 </div>
+                <h4 class="mb-2">Two Step Verification 💬</h4>
+                <p class="text-start mb-4">
+                    We sent a verification code to your email. Enter the code from the mailbox in the field below.
+                    <span class="fw-bold d-block mt-2">******@gmail.com</span>
+                </p>
+                <p class="mb-0 fw-semibold">Type your 6 digit security code</p>
+                <form id="twoStepsForm" action="../" method="GET">
+                    <div class="mb-3">
+                        <div class="auth-input-wrapper d-flex align-items-center justify-content-sm-between numeral-mask-wrapper">
+                            <input type="text" class="form-control auth-input h-px-50 text-center numeral-mask text-center h-px-50 mx-1 my-2" maxlength="1" autofocus>
+                            <input type="text" class="form-control auth-input h-px-50 text-center numeral-mask text-center h-px-50 mx-1 my-2" maxlength="1">
+                            <input type="text" class="form-control auth-input h-px-50 text-center numeral-mask text-center h-px-50 mx-1 my-2" maxlength="1">
+                            <input type="text" class="form-control auth-input h-px-50 text-center numeral-mask text-center h-px-50 mx-1 my-2" maxlength="1">
+                            <input type="text" class="form-control auth-input h-px-50 text-center numeral-mask text-center h-px-50 mx-1 my-2" maxlength="1">
+                            <input type="text" class="form-control auth-input h-px-50 text-center numeral-mask text-center h-px-50 mx-1 my-2" maxlength="1">
+                        </div>
+                        <input type="hidden" name="otp" />
+                    </div>
+                    <button class="btn btn-primary d-grid w-100 mb-3">
+                        Verify my account
+                    </button>
+                    <div class="text-center">Didn't get the code?
+                        <a href="javascript:void(0);">
+                            Resend
+                        </a>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
 </div>
 <div class="content-backdrop fade"></div>
-
-
-
+</div>
+</div>
+</div>
 
 <div class="layout-overlay layout-menu-toggle"></div>
-<div class="drag-target" style="touch-action: pan-y; -webkit-user-select: none; -webkit-user-drag: none;"></div>
-
+<div class="drag-target"></div>
+</div>
 
 <!-- Core JS -->
 <!-- build:js assets/vendor/js/core.js -->
@@ -125,5 +137,6 @@
 <script src="../assets/vendor/libs/tagify/tagify.js"></script>
 
 <!-- Main JS -->
-<script src="../assets/js/main.js"></script><!-- Page JS -->
-<script src="../assets/js/pages-auth.js"></script><svg id="SvgjsSvg1001" width="2" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev" style="overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;"><defs id="SvgjsDefs1002"></defs><polyline id="SvgjsPolyline1003" points="0,0"></polyline><path id="SvgjsPath1004" d="M0 0 "></path></svg></body></html>
+<script src="../assets/js/main.js"></script>
+<!-- Page JS -->
+<script src="../assets/js/pages-auth.js"></script>

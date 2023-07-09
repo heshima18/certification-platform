@@ -1,10 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="en" class="light-style layout-navbar-fixed layout-menu-fixed" data-theme="theme-default" data-assets-path="../assets/">
 
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
-    <title>Demo | UI Design</title>
+    <title>Demo | Add A Facility</title>
     <link rel="icon" type="image/x-icon" href="../assets/svg/logo.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -12,6 +13,7 @@
 
     <link rel="stylesheet" href="../assets/vendor/fonts/boxicons.css" />
     <link rel="stylesheet" href="../assets/vendor/fonts/fontawesome.css" />
+    <link rel="stylesheet" href="../styles/styling.css" />
 
     <!-- Core CSS -->
     <link rel="stylesheet" href="../assets/vendor/css/core.css" class="template-customizer-core-css" />
@@ -62,7 +64,7 @@
             </div>
             <div class="menu-inner-shadow"></div>
             <ul class="menu-inner py-1">
-                <li class="menu-item active">
+                <li class="menu-item">
                     <a href="/" class="menu-link">
                         <i class="menu-icon tf-icons bx bx-home-circle"></i>
                         <div>Dashboard</div>
@@ -83,7 +85,7 @@
                         <div>Applications</div>
                     </a>
                     <ul class="menu-sub">
-                        <li class="menu-item">
+                        <li class="menu-item ">
                             <a href="../addApplication/" class="menu-link capitalize">
                                 <div>add a new application</div>
                             </a>
@@ -110,13 +112,13 @@
                         </li>
                     </ul>
                 </li>
-                <li class="menu-item">
+                <li class="menu-item open">
                     <a href="javascript:void(0);" class="menu-link menu-toggle">
                         <i class="menu-icon tf-icons bx bx-dock-top"></i>
                         <div>Facilities</div>
                     </a>
                     <ul class="menu-sub">
-                        <li class="menu-item">
+                        <li class="menu-item active">
                             <a href="../addFacility/" class="menu-link capitalize">
                                 <div>add a new facility</div>
                             </a>
@@ -384,7 +386,7 @@
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end">
                                 <li>
-                                    <a class="dropdown-item" href="pages-account-settings-account.php">
+                                    <a class="dropdown-item" href="../myAccount/">
                                         <div class="d-flex">
                                             <div class="flex-shrink-0 me-3">
                                                 <div class="avatar avatar-online">
@@ -408,16 +410,10 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item" href="../myAccount/">
-                                        <i class="bx bx-cog me-2"></i>
-                                        <span class="align-middle">Settings</span>
-                                    </a>
-                                </li>
-                                <li>
                                     <div class="dropdown-divider"></div>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item" href="../login/">
+                                    <a class="dropdown-item" href="../login/" target="_blank">
                                         <i class="bx bx-power-off me-2"></i>
                                         <span class="align-middle">Log Out</span>
                                     </a>
@@ -433,161 +429,99 @@
             </nav>
             <div class="content-wrapper">
                 <div class="container-xxl flex-grow-1 container-p-y">
-    <div class="row">
-        <div class="col-lg-8 mb-4 order-0">
-            <div class="card">
-                <div class="d-flex align-items-end row">
-                    <div class="col-sm-7">
-                        <div class="card-body">
-                            <h5 class="card-title text-primary">Congratulations John! 🎉</h5>
-                            <p class="mb-4">Your Certification For <span class="fw-bold">Demo Facility</span> Has Been Approved</p>
 
-                            <a href="myCertificates/" class="btn btn-sm btn-label-primary">View
-                                Certifications</a>
-                        </div>
+<!-- Page CSS -->
+<link rel="stylesheet" href="../assets/vendor/css/pages/page-user-view.css" />
+
+<h4 class="fw-bold py-3 mb-4">
+    <span class="text-muted fw-light">User /</span> Add A Facility
+</h4>
+<div class="row">
+    <!-- User Content -->
+    <div class="col-xl-8 col-lg-7 col-md-12 order-0 order-md-1">
+        <div class="nav-align-top m-4">
+            <div class="tab-content">
+                <form id="addNewAddressForm" class="row g-3 fv-plugins-bootstrap5 fv-plugins-framework" onsubmit="return false" novalidate="false">
+                    <div class="col-12 col-md-6 fv-plugins-icon-container">
+                        <label class="form-label" for="facilityName">Facility Name</label>
+                        <input type="text" id="facilityName" name="facilityName" class="form-control" placeholder="Demo name">
+                    <div class="fv-plugins-message-container invalid-feedback"></div></div>
+                    <div class="col-12 col-md-6 fv-plugins-icon-container">
+                        <label class="form-label" for="tin-number">TIN number</label>
+                        <input type="text" id="tin-number" name="tin-number" class="form-control" placeholder="000 000">
+                    <div class="fv-plugins-message-container invalid-feedback"></div></div>
+                    <div class="col-12">
+                        <label class="form-label" for="province">Facility Type</label>
+                        <div class="position-relative"><div class="position-relative"><select id="province" name="province" class="select2 form-select select2-hidden-accessible" data-allow-clear="true" tabindex="-1" aria-hidden="true" data-select2-id="province">
+                            <option value="" data-select2-id="33">Select</option>
+                            <option value="North">Clinic</option>
+                            <option value="South">Hospital</option>
+                            <option value="East">Pharmacy</option>
+                        </select>
+                        <span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="32" style="width: auto;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-province-container"><span class="select2-selection__rendered" id="select2-province-container" role="textbox" aria-readonly="true"><span class="select2-selection__placeholder">Select value</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span></div></div>
                     </div>
-                    <div class="col-sm-5 text-center text-sm-left">
-                        <div class="card-body pb-0 px-0 px-md-4">
-                            <img src="../assets/img/illustrations/man-with-laptop-light.png" height="140" alt="View Badge User" data-app-dark-img="illustrations/man-with-laptop-dark.png" data-app-light-img="illustrations/man-with-laptop-light.png">
-                        </div>
+                    <div class="col-12">
+                        <label class="form-label" for="province">Province</label>
+                        <div class="position-relative"><div class="position-relative"><select id="province" name="province" class="select2 form-select select2-hidden-accessible" data-allow-clear="true" tabindex="-1" aria-hidden="true" data-select2-id="province">
+                            <option value="" data-select2-id="33">Select</option>
+                            <option value="North">North</option>
+                            <option value="South">South</option>
+                            <option value="East">East</option>
+                            <option value="West">West</option>
+                            <option value="kigali">Kigali</option>
+                        </select>
+                        <span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="32" style="width: auto;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-province-container"><span class="select2-selection__rendered" id="select2-province-container" role="textbox" aria-readonly="true"><span class="select2-selection__placeholder">Select value</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span></div></div>
                     </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4 col-md-4 order-1">
-            <div class="row">
-                <div class="col-lg-6 col-md-12 col-6 mb-4">
-                    <div class="card">
-                        <div class="card-body ">
-                            <span class="d-block fw-semibold mb-1">Total Facilities</span>
-                            <span class="flex-column">
-                                <h3 class=" d-md-inline-block">5</h3>
-                                <small class="mb-5">Facilities</small>
-                                <a href="myFacilities/" class="btn btn-sm btn-label-primary">View</a>
-                            </span>
-                        </div>
-                        
+                    <div class="col-12">
+                        <label class="form-label" for="District">District</label>
+                        <div class="position-relative"><div class="position-relative"><select id="district" name="district" class="select2 form-select select2-hidden-accessible" data-allow-clear="true" tabindex="-1" aria-hidden="true" data-select2-id="district">
+                            <option value="" data-select2-id="33">Select</option>
+                            <option value="nyarugenge">nyarugenge</option>
+                            <option value="gasabo">gasabo</option>
+                            <option value="kicukiro">kicukiro</option>
+                            <option value="rubavu">rubavu</option>
+                            <option value="karongi">karongi</option>
+                            <option value="musanze">musanze</option>
+                            <option value="huye">huye</option>
+                        </select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="32" style="width: auto;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-province-container"><span class="select2-selection__rendered" id="select2-province-container" role="textbox" aria-readonly="true"><span class="select2-selection__placeholder">Select value</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span></div></div>
                     </div>
-                </div>
-                <div class="col-lg-6 col-md-12 col-6 mb-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <span class="d-block fw-semibold mb-1">Total Licenced Facilities</span>
-                            <span class="flex-column">
-                                <h3 class=" d-md-inline-block">5</h3>
-                                <small class="mb-5">Facilities</small>
-                            </span>
-                        </div>
+                    <div class="col-12">
+                        <label class="form-label" for="Sector">Sector</label>
+                        <div class="position-relative"><div class="position-relative"><select id="sector" name="sector" class="select2 form-select select2-hidden-accessible" data-allow-clear="true" tabindex="-1" aria-hidden="true" data-select2-id="sector">
+                            <option value="" data-select2-id="33">Select</option>
+                            <option value="nyarugenge">gisenyi</option>
+                            <option value="gasabo">muhoza</option>
+                            <option value="kicukiro">butare</option>
+                            <option value="rubavu">gatenga</option>
+                            <option value="karongi">nyabugogo</option>
+                        </select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="32" style="width: auto;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-province-container"><span class="select2-selection__rendered" id="select2-province-container" role="textbox" aria-readonly="true"><span class="select2-selection__placeholder">Select value</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span></div></div>
                     </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-12 col-lg-8 order-2 order-md-3 order-lg-2 mb-4">
-            <div class=" mb-4 order-0">
-                <div class="card">
-                    <div class="d-flex align-items-end row">
-                        <div class="col-sm-7">
-                            <div class="card-body">
-                                <h5 class="card-title text-primary">Verify Your Identity John!</h5>
-                                <p class="mb-4">verify your personal info for more system functonalities like <span class="fw-bold">Facility Registration</span>, <span class="fw-bold">Certificate Application</span> And more</p>
-                                <a href="myAccount/" class="btn btn-sm btn-label-primary">Verify</a>
-                            </div>
-                        </div>
-                        <div class="col-sm-5 text-center text-sm-left">
-                            <div class="card-body pb-0 px-0 px-md-4">
-                                <img src="../assets/img/illustrations/man-with-laptop-light.png" height="140" alt="View Badge User" data-app-dark-img="illustrations/man-with-laptop-dark.png" data-app-light-img="illustrations/man-with-laptop-light.png">
-                            </div>
-                        </div>
+                    <div class="col-12 text-center">
+                        <button type="submit" class="btn btn-primary me-sm-3 me-1">Submit</button>
+                        <button type="reset" class="btn btn-label-secondary" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
                     </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-12 col-md-8 col-lg-4 order-3 order-md-2">
-            <div class="row">
-                <div class="col-12 mb-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="d-flex justify-content-between flex-sm-row flex-column gap-3">
-                                <div class="d-flex flex-sm-column flex-row align-items-start justify-content-between">
-                                    <div class="card-title">
-                                        <h5 class="text-nowrap mb-2">Profile Visitors Report</h5>
-                                        <span class="badge bg-label-warning rounded-pill">Year
-                                            2021</span>
-                                    </div>
-                                    <div class="mt-sm-auto">
-                                        <small class="text-success text-nowrap fw-semibold"><i class='bx bx-chevron-up'></i>
-                                            68.2%</small>
-                                        <h3 class="mb-0">200</h3>
-                                    </div>
-                                </div>
-                                <div id="profileReportChart"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <input type="hidden"></form>
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-6 col-lg-4 mb-3">
-            <div class="card">
-                <div class="card-header">
-                    Applications
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">Total Applications</h5>
-                    <p class="card-text">
-                        12 Applications
-                    </p>
-                    <a href="myApplications/" class="btn btn-primary">View</a>
-                </div>
-            </div>
+    <!--/ User Content -->
+</div>
+</div>
+<footer class="content-footer footer bg-footer-theme">
+    <div class="container-xxl d-flex flex-wrap justify-content-between py-2 flex-md-row flex-column">
+        <div class="mb-2 mb-md-0">
+            &copy;
+            <script>
+                document.write(new Date().getFullYear())
+            </script>
+            <strong>Demo</strong>
         </div>
-        <div class="col-md-6 col-lg-4 mb-3">
-            <div class="card">
-                <div class="card-header">
-                    Applications
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">Pending Applications</h5>
-                    <p class="card-text">
-                        2 Applications
-                    </p>
-                    <a href="pendingApplications/" class="btn btn-primary">View</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6 col-lg-4 mb-3">
-            <div class="card">
-                <div class="card-header">
-                    Applications
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">Declined Applications</h5>
-                    <p class="card-text">
-                        0 Applications
-                    </p>
-                    <a href="declinedApplications/" class="btn btn-primary">View</a>
-                </div>
-            </div>
+        <div>
+            Powered by <a href="https://prtlfo.vercel.app/" target="_blank" class="footer-link fw-bolder">#__himself</a>
         </div>
     </div>
-    </div>
-    <footer class="content-footer footer bg-footer-theme">
-        <div class="container-xxl d-flex flex-wrap justify-content-between py-2 flex-md-row flex-column">
-            <div class="mb-2 mb-md-0">
-                &copy;
-                <script>
-                    document.write(new Date().getFullYear())
-                </script>
-                <strong>Demo</strong>
-            </div>
-            <div>
-                Powered by <a href="https://prtlfo.vercel.app/" target="_blank" class="footer-link fw-bolder">#__himself</a>
-            </div>
-        </div>
-    </footer>
-    <div class="content-backdrop fade"></div>
+</footer>
+<div class="content-backdrop fade"></div>
 </div>
 </div>
 </div>
@@ -634,6 +568,6 @@
 <!-- Main JS -->
 <script src="../assets/js/main.js"></script>
 <!-- Page JS -->
-<script src="../assets/js/dashboards-analytics.js"></script>
-</body>
-</html>
+<script src="../assets/js/modal-edit-user.js"></script>
+<script src="../assets/js/app-user-view.js"></script>
+<script src="../assets/js/app-user-view-account.js"></script>
